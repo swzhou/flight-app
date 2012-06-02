@@ -3,13 +3,11 @@
 
 package sample.roo.flightapp.domain;
 
-import java.io.Serializable;
+import org.springframework.beans.factory.annotation.Configurable;
 import sample.roo.flightapp.domain.Flight;
 
-privileged aspect Flight_Roo_Serializable {
+privileged aspect Flight_Roo_Configurable {
     
-    declare parents: Flight implements Serializable;
-    
-    private static final long Flight.serialVersionUID = 1L;
+    declare @type: Flight: @Configurable;
     
 }

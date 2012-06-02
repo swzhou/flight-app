@@ -1,15 +1,33 @@
 package sample.roo.flightapp.domain;
 
-import org.springframework.roo.addon.equals.RooEquals;
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.serializable.RooSerializable;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooEquals
-@RooSerializable
+@RooJpaActiveRecord(identifierType = FlightKey.class, table = "flights")
 public class Flight {
 
-    private Integer flightId;
+    private Integer numOfSeats;
+
+    private String origin;
+
+    private String destination;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date createdDate;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date modifiedDate;
+
+    private String createdBy;
+
+    private String modifiedBy;
 }

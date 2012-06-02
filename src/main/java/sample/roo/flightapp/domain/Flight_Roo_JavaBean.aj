@@ -3,16 +3,65 @@
 
 package sample.roo.flightapp.domain;
 
+import java.util.Date;
 import sample.roo.flightapp.domain.Flight;
 
 privileged aspect Flight_Roo_JavaBean {
     
-    public Integer Flight.getFlightId() {
-        return this.flightId;
+    public Integer Flight.getNumOfSeats() {
+        return this.numOfSeats;
     }
     
-    public void Flight.setFlightId(Integer flightId) {
-        this.flightId = flightId;
+    public void Flight.setNumOfSeats(Integer numOfSeats) {
+        this.numOfSeats = numOfSeats;
+    }
+    
+    public String Flight.getOrigin() {
+        return this.origin;
+    }
+    
+    public void Flight.setOrigin(String origin) {
+        this.origin = origin;
+    }
+    
+    public String Flight.getDestination() {
+        return this.destination;
+    }
+    
+    public void Flight.setDestination(String destination) {
+        this.destination = destination;
+    }
+    
+    public Date Flight.getCreatedDate() {
+        return this.createdDate;
+    }
+    
+    public void Flight.setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+    
+    public Date Flight.getModifiedDate() {
+        return this.modifiedDate;
+    }
+    
+    public void Flight.setModifiedDate(Date modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+    
+    public String Flight.getCreatedBy() {
+        return this.createdBy;
+    }
+    
+    public void Flight.setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+    
+    public String Flight.getModifiedBy() {
+        return this.modifiedBy;
+    }
+    
+    public void Flight.setModifiedBy(String modifiedBy) {
+        this.modifiedBy = modifiedBy;
     }
     
 }
