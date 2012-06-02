@@ -17,3 +17,4 @@ field string --fieldName firstName
 field string --fieldName lastName
 field number --fieldName age --type java.lang.Integer
 field other --fieldName address --type sample.roo.flightapp.domain.Address
+interface --class ~.service.IFlightService
