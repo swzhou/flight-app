@@ -8,6 +8,22 @@ import sample.roo.flightapp.domain.Flight;
 
 privileged aspect Flight_Roo_JavaBean {
     
+    public Date Flight.getModifiedDate() {
+        return this.modifiedDate;
+    }
+    
+    public void Flight.setModifiedDate(Date modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+    
+    public String Flight.getModifiedBy() {
+        return this.modifiedBy;
+    }
+    
+    public void Flight.setModifiedBy(String modifiedBy) {
+        this.modifiedBy = modifiedBy;
+    }
+    
     public Integer Flight.getNumOfSeats() {
         return this.numOfSeats;
     }
@@ -40,28 +56,12 @@ privileged aspect Flight_Roo_JavaBean {
         this.createdDate = createdDate;
     }
     
-    public Date Flight.getModifiedDate() {
-        return this.modifiedDate;
-    }
-    
-    public void Flight.setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-    
     public String Flight.getCreatedBy() {
         return this.createdBy;
     }
     
     public void Flight.setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
-    }
-    
-    public String Flight.getModifiedBy() {
-        return this.modifiedBy;
-    }
-    
-    public void Flight.setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
     }
     
 }
