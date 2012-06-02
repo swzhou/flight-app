@@ -18,3 +18,11 @@ field string --fieldName lastName
 field number --fieldName age --type java.lang.Integer
 field other --fieldName address --type sample.roo.flightapp.domain.Address
 interface --class ~.service.IFlightService
+class --class ~.domain.FightDescription --rooAnnotations 
+class --class ~.domain.Flight --rooAnnotations 
+// [failed] focus --class ~.domain.FightDescription
+// [failed] field string --fieldName fromCity
+focus --class ~.domain.FlightDescription
+field string --fieldName fromCity
+field string --fieldName toCity
+field number --fieldName flightId --type java.lang.Integer --class ~.domain.Flight
