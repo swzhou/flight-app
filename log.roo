@@ -11,3 +11,9 @@ properties set --name log4j.properties --path SRC_MAIN_RESOURCES --key log4j.roo
 properties set --name log4j.properties --path SRC_MAIN_RESOURCES --key log4j.rootLogger --value DEBUG
 class --class ~.service.FlightService --rooAnnotations 
 field string --fieldName target
+class --class ~.domain.Address --rooAnnotations 
+class --class ~.domain.Passenger --rooAnnotations 
+field string --fieldName firstName 
+field string --fieldName lastName
+field number --fieldName age --type java.lang.Integer
+field other --fieldName address --type sample.roo.flightapp.domain.Address
