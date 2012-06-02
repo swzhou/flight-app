@@ -26,3 +26,5 @@ focus --class ~.domain.FlightDescription
 field string --fieldName fromCity
 field string --fieldName toCity
 field number --fieldName flightId --type java.lang.Integer --class ~.domain.Flight
+persistence setup --provider HIBERNATE --database MYSQL --databaseName myFlightAppDB
+database properties list 
