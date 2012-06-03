@@ -15,38 +15,38 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(identifierType = FlightKey.class, table = "flights")
+@RooJpaActiveRecord(identifierType = FlightKey.class, table = "flights", finders = { "findFlightsByDestinationLikeAndOriginLike" })
 public class Flight {
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(style = "M-")
-	private Date modifiedDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date modifiedDate;
 
-	private String modifiedBy;
+    private String modifiedBy;
 
-	@NotNull
-	@DecimalMin("100")
-	@DecimalMax("200")
-	private Integer numOfSeats;
+    @NotNull
+    @DecimalMin("100")
+    @DecimalMax("200")
+    private Integer numOfSeats;
 
-	@NotNull
-	@Size(min = 3, max = 20)
-	private String origin;
+    @NotNull
+    @Size(min = 3, max = 20)
+    private String origin;
 
-	@NotNull
-	@Size(min = 3, max = 20)
-	private String destination;
+    @NotNull
+    @Size(min = 3, max = 20)
+    private String destination;
 
-	@NotNull
-	@Column(name = "created_date")
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(style = "M-")
-	private Date createdDate;
+    @NotNull
+    @Column(name = "created_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date createdDate;
 
-	@NotNull
-	private String createdBy;
-	
-	public static long countFlights() {
+    @NotNull
+    private String createdBy;
+
+    public static long countFlights() {
         return entityManager().createQuery("SELECT COUNT(*) FROM Flight o", Long.class).getSingleResult();
     }
 }
