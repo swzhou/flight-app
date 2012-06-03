@@ -47,3 +47,9 @@ perform tests
 focus --class ~.domain.Flight 
 test integration 
 dod --entity ~.domain.Flight --class MyFlightDod
+focus --class ~.domain.Flight
+test mock 
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log closed at 2012-06-03 10:31:27
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log opened at 2012-06-03 10:34:43
+perform tests 
+perform tests 

@@ -4,4 +4,9 @@ import org.springframework.roo.addon.dod.RooDataOnDemand;
 
 @RooDataOnDemand(entity = Flight.class)
 public class MyFlightDod {
+	
+	public void setNumOfSeats(Flight obj, int index) {
+        Integer numOfSeats = new Integer(150);
+        obj.setNumOfSeats(numOfSeats);
+    }
 }

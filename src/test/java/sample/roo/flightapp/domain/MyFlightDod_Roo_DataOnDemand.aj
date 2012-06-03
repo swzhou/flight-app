@@ -75,11 +75,6 @@ privileged aspect MyFlightDod_Roo_DataOnDemand {
         obj.setModifiedDate(modifiedDate);
     }
     
-    public void MyFlightDod.setNumOfSeats(Flight obj, int index) {
-        Integer numOfSeats = new Integer(index);
-        obj.setNumOfSeats(numOfSeats);
-    }
-    
     public void MyFlightDod.setOrigin(Flight obj, int index) {
         String origin = "origin_" + index;
         if (origin.length() > 20) {

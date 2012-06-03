@@ -47,6 +47,6 @@ public class Flight {
 	private String createdBy;
 	
 	public static long countFlights() {
-        return entityManager().createQuery("SELECT COUNT(o.origin) FROM Flight o", Long.class).getSingleResult();
+        return entityManager().createQuery("SELECT COUNT(*) FROM Flight o", Long.class).getSingleResult();
     }
 }
