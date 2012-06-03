@@ -28,3 +28,19 @@ field string --fieldName toCity
 field number --fieldName flightId --type java.lang.Integer --class ~.domain.Flight
 persistence setup --provider HIBERNATE --database MYSQL --databaseName myFlightAppDB
 database properties list 
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log opened at 2012-06-03 06:52:41
+perform tests 
+perform tests 
+perform tests 
+perform tests 
+perform tests 
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log closed at 2012-06-03 07:30:50
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log opened at 2012-06-03 07:41:46
+perform tests
+perform tests
+perform tests
+perform tests
+perform tests
+perform tests
+perform tests
+perform tests

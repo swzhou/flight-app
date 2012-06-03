@@ -3,12 +3,9 @@
 
 package sample.roo.flightapp.domain;
 
-import java.io.Serializable;
 import sample.roo.flightapp.domain.FlightKey;
 
 privileged aspect FlightKey_Roo_Serializable {
-    
-    declare parents: FlightKey implements Serializable;
     
     private static final long FlightKey.serialVersionUID = 1L;
     

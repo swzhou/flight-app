@@ -15,7 +15,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(identifierType = FlightKey.class, table = "flights", persistMethod = "save", countMethod = "", findMethod = "finderFor", findEntriesMethod = "")
+@RooJpaActiveRecord(identifierType = FlightKey.class, table = "flights")
 public class Flight {
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -45,4 +45,8 @@ public class Flight {
 
 	@NotNull
 	private String createdBy;
+	
+	public static long countFlights() {
+        return entityManager().createQuery("SELECT COUNT(o.origin) FROM Flight o", Long.class).getSingleResult();
+    }
 }

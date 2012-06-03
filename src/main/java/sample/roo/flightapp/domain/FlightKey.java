@@ -1,5 +1,6 @@
 package sample.roo.flightapp.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -12,7 +13,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooEquals
 @RooIdentifier
-public final class FlightKey {
+public final class FlightKey implements Serializable {
 
     @NotNull
     private String flightId;

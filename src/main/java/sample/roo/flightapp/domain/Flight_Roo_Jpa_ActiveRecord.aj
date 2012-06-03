@@ -21,21 +21,21 @@ privileged aspect Flight_Roo_Jpa_ActiveRecord {
         return em;
     }
     
-    public static long Flight.countFlights() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Flight o", Long.class).getSingleResult();
-    }
-    
     public static List<Flight> Flight.findAllFlights() {
         return entityManager().createQuery("SELECT o FROM Flight o", Flight.class).getResultList();
     }
     
-    public static Flight Flight.finderForFlight(FlightKey id) {
+    public static Flight Flight.findFlight(FlightKey id) {
         if (id == null) return null;
         return entityManager().find(Flight.class, id);
     }
     
+    public static List<Flight> Flight.findFlightEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Flight o", Flight.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
     @Transactional
-    public void Flight.save() {
+    public void Flight.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
@@ -46,7 +46,7 @@ privileged aspect Flight_Roo_Jpa_ActiveRecord {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Flight attached = Flight.finderForFlight(this.id);
+            Flight attached = Flight.findFlight(this.id);
             this.entityManager.remove(attached);
         }
     }
