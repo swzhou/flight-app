@@ -44,3 +44,6 @@ perform tests
 perform tests
 perform tests
 perform tests
+focus --class ~.domain.Flight 
+test integration 
+dod --entity ~.domain.Flight --class MyFlightDod
